@@ -66,13 +66,13 @@
                 ]
             }
         },
-        "/api/applications/{application}": {
+        "/api/v1/getApplication/{application}": {
             "get": {
                 "tags": [
                     "Applications"
                 ],
                 "summary": "Получить единичную",
-                "operationId": "95b4527690fa3b045775de54b2ffcc93",
+                "operationId": "2f68545076c15227729c497ea012dd0d",
                 "parameters": [
                     {
                         "name": "application",
@@ -91,27 +91,35 @@
                                     "properties": {
                                         "id": {
                                             "type": "integer",
-                                            "example": "id client"
+                                            "example": "7"
                                         },
                                         "name": {
                                             "type": "string",
-                                            "example": "name client"
+                                            "example": "Marchenko Yrii Valentinovich"
                                         },
                                         "email": {
                                             "type": "string",
-                                            "example": "email client"
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "example": "message client"
-                                        },
-                                        "comment": {
-                                            "type": "string",
-                                            "example": "comment client"
+                                            "example": "emelvin@gmail.com"
                                         },
                                         "status": {
                                             "type": "string",
-                                            "example": "status client"
+                                            "example": "Active"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Здравствуйте. Рассмотрите мою заявку"
+                                        },
+                                        "comment": {
+                                            "type": "string",
+                                            "example": "null"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "31-01-2024"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "31-01-2024"
                                         }
                                     },
                                     "type": "object"
