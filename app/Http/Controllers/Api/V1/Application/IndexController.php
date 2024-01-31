@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\V1\BaseController;
 
 class IndexController extends BaseController
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): array
     {
         $status = $request->query('query'); // Получаем статус из запроса
 

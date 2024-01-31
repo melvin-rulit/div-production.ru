@@ -54,12 +54,14 @@ use OpenApi\Annotations as OA;
  *        response="200",
  *        description="ok",
  *        @OA\JsonContent(
- *              @OA\Property(property="id", type="integer", example="id client"),
- *              @OA\Property(property="name", type="string", example="name client"),
- *              @OA\Property(property="email", type="string", example="email client"),
- *              @OA\Property(property="message", type="string", example="message client"),
- *              @OA\Property(property="comment", type="string", example="comment client"),
- *              @OA\Property(property="status", type="string", example="status client"),
+ *              @OA\Property(property="id", type="integer", example="7"),
+ *              @OA\Property(property="name", type="string", example="Marchenko Yrii Valentinovich"),
+ *              @OA\Property(property="email", type="string", example="emelvin@gmail.com"),
+ *              @OA\Property(property="status", type="string", example="Active"),
+ *              @OA\Property(property="message", type="string", example="Здравствуйте. Рассмотрите мою заявку"),
+ *              @OA\Property(property="comment", type="string", example="null"),
+ *              @OA\Property(property="created_at", type="string", example="31-01-2024"),
+ *              @OA\Property(property="updated_at", type="string", example="31-01-2024"),
  *
  *        ),
  *     )
