@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\Application\IndexController;
 use App\Http\Controllers\Api\V1\Application\CreateController;
 use App\Http\Controllers\Api\V1\Application\UpdateController;
+use App\Http\Controllers\Api\V1\Application\DeleteController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -14,3 +15,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/v1/getApplications', IndexController::class);
 Route::post('/v1/createApplications', CreateController::class);
 Route::put('/v1/updateApplications/{application}', UpdateController::class);
+Route::delete('/v1/deleteApplications/{application}', DeleteController::class);
