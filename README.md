@@ -1,5 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
+![Laravel 8.0](https://img.shields.io/badge/Laravel-8.75-orange)
 
 # Описание проекта
 В данном проекте реализуется Тестовое задание на позицию Backend-разработчика:
@@ -8,7 +7,16 @@
 - SWAGGER;
 - DOCKER
 
-Данные хранятся в подключенной БД MySQL
+Данные хранятся в подключенной БД MySQL. Вход для Администратора:
+
+- **Почта** 
+```sh
+ div-production@mail.ru
+```
+- **Пароль**
+```sh
+password
+```
 
 # Инсталляция
 
