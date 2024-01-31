@@ -14,4 +14,9 @@ class Application extends Model
         'Active' => 'На рассмотрении',
         'Resolved' => 'Рассмотренно',
     ];
+
+    public function scopeByStatus($query, $status)
+    {
+        return $query->where('status', $status);
+    }
 }
