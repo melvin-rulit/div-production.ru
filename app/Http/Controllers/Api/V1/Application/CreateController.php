@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1\Application;
 
+use App\Http\Resources\ApplicationResource;
 use App\Models\Application;
 use App\Http\Controllers\Api\V1\BaseController;
 use App\Http\Requests\Application\CreateRequest;
@@ -15,7 +16,8 @@ use App\Http\Requests\Application\CreateRequest;
 
             $result = Application::create($validateApplication);
 
-            return $this->sendResponse($result, 'Заявка была успешно создана');
+            return $this->sendResponse('Заявка была успешно создана', ApplicationResource::make($result));
         }
     }
 }
+

@@ -15,6 +15,6 @@ class UpdateController extends BaseController
         $validateApplication['status'] = 'Resolved';
         $application->update($validateApplication);
 
-        return $this->sendResponse($validateApplication, 'Заявка была успешно обновлена');
+        return $this->sendResponse('Заявка была успешно обновлена', $validateApplication);
     }
 }
