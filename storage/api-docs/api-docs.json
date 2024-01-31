@@ -1,0 +1,357 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api for test",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/v1/getApplications": {
+            "get": {
+                "tags": [
+                    "Applications"
+                ],
+                "summary": "Получить",
+                "operationId": "40bd81e4cd07fab55228c9aae06bc7bb",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "id client"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name client"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "email client"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "status client"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "message client"
+                                        },
+                                        "comment": {
+                                            "type": "string",
+                                            "example": "comment client"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "created_at client"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "updated_at client"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/applications/{application}": {
+            "get": {
+                "tags": [
+                    "Applications"
+                ],
+                "summary": "Получить единичную",
+                "operationId": "95b4527690fa3b045775de54b2ffcc93",
+                "parameters": [
+                    {
+                        "name": "application",
+                        "in": "path",
+                        "description": "ID заявки",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "id client"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name client"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "email client"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "message client"
+                                        },
+                                        "comment": {
+                                            "type": "string",
+                                            "example": "comment client"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "status client"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/createApplications": {
+            "post": {
+                "tags": [
+                    "Applications"
+                ],
+                "summary": "Создать",
+                "operationId": "30436a2193cd93ce4d1ce685035e89a9",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Marchenko Yurii Valentinovich"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "melvin@gmail.com"
+                                            },
+                                            "message": {
+                                                "type": "string",
+                                                "example": "Здравствуйте. Рассмотрите мою заявку"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "string",
+                                            "example": "true"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Marchenko Yurii Valentinovich"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "melvin@gmail.com"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "null"
+                                                },
+                                                "message": {
+                                                    "type": "string",
+                                                    "example": "Здравствуйте. Рассмотрите мою заявку"
+                                                },
+                                                "comment": {
+                                                    "type": "string",
+                                                    "example": "null"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "example": "31-01-2024"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "example": "31-01-2024"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Заявка была успешно обновлена"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/updateApplications/{application}": {
+            "put": {
+                "tags": [
+                    "Applications"
+                ],
+                "summary": "Обновить",
+                "operationId": "1a36398347c2a976f105263068e066fc",
+                "parameters": [
+                    {
+                        "name": "application",
+                        "in": "path",
+                        "description": "ID заявки",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "status": {
+                                                "type": "string",
+                                                "example": "Resolved"
+                                            },
+                                            "comment": {
+                                                "type": "string",
+                                                "example": "Я рассмотрел заявку и теперь она получит статус Resolved"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "string",
+                                            "example": "true"
+                                        },
+                                        "data": {
+                                            "description": "An example object representing the updated data.",
+                                            "properties": {
+                                                "comment": {
+                                                    "type": "string",
+                                                    "example": "Я рассмотрел заявку и теперь она получит статус Resolved"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "Resolved"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Заявка была успешно обновлена"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/deleteApplications/{application}": {
+            "delete": {
+                "tags": [
+                    "Applications"
+                ],
+                "summary": "Удалить",
+                "operationId": "a25c9fdc0f5106b221ddf1c8833a8331",
+                "parameters": [
+                    {
+                        "name": "application",
+                        "in": "path",
+                        "description": "ID заявки",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "string",
+                                            "example": "true"
+                                        },
+                                        "data": {
+                                            "type": "string",
+                                            "example": "null"
+                                        },
+                                        "message": {
+                                            "type": "boolean",
+                                            "example": "Заявка была успешно удалена"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    }
+}
