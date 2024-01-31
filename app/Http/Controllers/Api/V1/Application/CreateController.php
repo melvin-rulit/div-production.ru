@@ -2,10 +2,20 @@
 
 namespace App\Http\Controllers\Api\V1\Application;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Application;
+use App\Http\Controllers\Api\V1\BaseController;
+use App\Http\Requests\Application\CreateRequest;
 
-class CreateController extends Controller
 {
-    //
+    class CreateController extends BaseController
+    {
+        public function __invoke(CreateRequest $request)
+        {
+            $validateApplication = $request->validated();
+
+            $result = Application::create($validateApplication);
+
+            return $this->sendResponse($result, 'Заявка была успешно создана');
+        }
+    }
 }

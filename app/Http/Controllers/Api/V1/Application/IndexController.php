@@ -18,8 +18,4 @@ class IndexController extends BaseController
         return ApplicationResource::collection($applications)->resolve();
 
     }
-
-
-
-
 }
