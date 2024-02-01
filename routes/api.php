@@ -13,8 +13,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/v1/getApplications', IndexController::class);
-Route::get('/v1/getApplication/{application}', ShowController::class);
-Route::post('/v1/createApplications', CreateController::class);
-Route::put('/v1/updateApplications/{application}', UpdateController::class);
-Route::delete('/v1/deleteApplications/{application}', DeleteController::class);
+Route::group(['prefix' => 'v1'], function () {
+
+    Route::get('/getApplications', IndexController::class);
+    Route::get('/getApplication/{application}', ShowController::class);
+    Route::post('/createApplications', CreateController::class);
+    Route::put('/updateApplications/{application}', UpdateController::class);
+    Route::delete('/deleteApplications/{application}', DeleteController::class);
+
+    Route::post('/sendEmail', IndexController::class);
+
+});
+
+
