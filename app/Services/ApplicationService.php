@@ -1,10 +1,14 @@
 <?php
 
-
 namespace App\Services;
 
+use App\Services\Interfaces\ApplicationServiceInterface;
 
-class ApplicationService
+class ApplicationService implements ApplicationServiceInterface
 {
 
+    public function getApplicationData($status)
+    {
+
+    }
 }
