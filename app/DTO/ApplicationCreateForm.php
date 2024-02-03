@@ -9,7 +9,6 @@ class ApplicationCreateForm
     public string $name;
     public string $email;
     public string $message;
-    public string $status;
 
     public function __construct(string $name, string $email, string $message)
     {
@@ -33,11 +32,6 @@ class ApplicationCreateForm
             'email' => $this->email,
             'message' => $this->message,
         ];
-    }
-
-    public function setStatus(string $status): void
-    {
-        $this->status = $status;
     }
 
 }

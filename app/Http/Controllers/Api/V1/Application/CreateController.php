@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1\Application;
 
-use App\DTO\ApplicationCreateForm;
-use App\Http\Controllers\Api\V1\BaseController;
-use App\Http\Requests\Application\CreateRequest;
-use App\Http\Resources\ApplicationResource;
 use App\Models\Application;
 use Illuminate\Http\JsonResponse;
+use App\DTO\ApplicationCreateForm;
+use App\Http\Resources\ApplicationResource;
+use App\Http\Controllers\Api\V1\BaseController;
+use App\Http\Requests\Application\CreateRequest;
 
 {
     class CreateController extends BaseController
