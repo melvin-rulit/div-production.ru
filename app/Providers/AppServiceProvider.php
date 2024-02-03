@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\ApplicationService;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Interfaces\ApplicationServiceInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(ApplicationServiceInterface::class,
+            ApplicationService::class);
+
     }
 
     /**
