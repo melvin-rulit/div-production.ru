@@ -13,4 +13,9 @@ class ApplicationRepository implements ApplicationRepositoryInterface
         return Application::all();
     }
 
+    public function getByStatus($status)
+    {
+        return Application::where('status', 'like',  '%' .$status. '%')->get();
+    }
+
 }
