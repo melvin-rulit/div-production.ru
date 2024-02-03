@@ -23,8 +23,4 @@ class Application extends Model
         'Resolved' => 'Рассмотренно',
     ];
 
-    public function scopeByStatus($query, $status)
-    {
-        return $query->where('status', $status);
-    }
 }

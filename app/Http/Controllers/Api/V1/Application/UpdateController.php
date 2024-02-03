@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1\Application;
 
 use App\Models\Application;
+use App\DTO\ApplicationUpdateForm;
 use App\Http\Controllers\Api\V1\BaseController;
 use App\Http\Requests\Application\UpdateRequest;
 
@@ -10,11 +11,12 @@ class UpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request, Application $application)
     {
-        $validateApplication = $request->validated();
+        $data = ApplicationUpdateForm::fromRequest($request);
 
-        $validateApplication['status'] = 'Resolved';
-        $application->update($validateApplication);
+        $data->setStatus('Resolved');
 
-        return $this->sendResponse('Заявка была успешно обновлена', $validateApplication);
+        $result = $application->update($data->toArray());
+
+        return $this->sendResponse('Заявка была успешно обновлена', $result);
     }
 }
